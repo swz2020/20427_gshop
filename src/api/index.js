@@ -1,0 +1,11 @@
+import ajax from './ajax'
+export const reqAddress=(geohash)=>ajax(`/position/${geohash}`)
+export const reqFoodTypes=()=>ajax(`/index_category`)
+export const reqShops=(longitude,latitude)=>ajax(`/shops`,{longitude,latitude})
+export const reqSearchShops=(keyword,longitude,latitude)=>ajax(`/search_shops`,{longitude,latitude,keyword})
+export const reqCaptcha=()=>ajax(`/captcha`)
+export const reqLoginPwd=(name,pwd,captcha)=>ajax(`/login_pwd`,{name,pwd,captcha},'POST')
+export const reqSendCode=(phone)=>ajax(`/sendcode`,{phone})
+export const reqLoginSms=(phone,code)=>ajax(`/login_sms`,{phone,code},'POST')
+export const reqUserInfo=()=>ajax(`/userinfo`)
+export const reqLogOut=()=>ajax(`/logout`)
